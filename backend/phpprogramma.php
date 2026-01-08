@@ -1,0 +1,2 @@
+laravel new example-app
+
