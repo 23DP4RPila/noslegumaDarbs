@@ -11,6 +11,202 @@
     border-radius: 1rem;
     padding: 1rem;
     min-width: 6rem;
-    min-height: 6rem;
+    min-height: 6rem;   
+}
+
+
+
+* { 
+    overflow-x: hidden;
+}
+
+body {
+    background-color: rgb(173, 208, 209);
+}
+
+.card {
+    display: inline-flex;
+    flex-direction: column;
+    
+    align-items: center;
+    justify-content: space-between;
+
+    min-width: 15%;
+    
+    max-width: 30%;
+
+    border: 1px solid;
+    padding: 0.5rem;
+
+    overflow: hidden;
+
+
+}
+
+.card > img {
+    padding: 1rem;
+    width: 100%;
+}
+
+.card > p {
+    flex-direction: column;
+    overflow: hidden;
+
+
+}
+                                                                                
+.card:hover {
+    transform: translateY(-5px);
+    transition: all 0.1s;
+    
+}
+
+
+/* ------------------------ */
+
+
+header {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+
+    padding: 1rem;
+    min-width: 95%;
+    border-bottom: 0.2rem solid;
+    align-content: center ;
+    align-items: center;
+    
+}
+
+header > img {
+    scale: 70%;
+    float: left;
+    background-color: rgb(141, 171, 172);
+}
+
+header > img:hover {
+    background-color: rgb(120, 120, 120);
+    transform: translateY(-5px);
+    transition: all 0.1s;
+    
+}
+
+header > img:active {
+    background-color: green;
+}
+
+
+header > p {
+    font-size: 2.5rem;
+}
+
+header > a {
+    flex-wrap: wrap;
+
+    text-decoration: none;  
+    color: black;  
+    border: none;
+    background-color: rgb(141, 171, 172);
+    font-size: 4rem
+}
+
+header > a:hover {
+    background-color: rgb(120, 120, 120);
+    transform: translateY(-5px);
+    transition: all 0.1s;
+    
+}
+
+header > a:active {
+    background-color: green;
+}
+
+
+
+/* ------------------------ */
+
+
+
+main {
+    display: inline-flex;
+
+    flex-wrap: wrap;
+    flex-basis: 100%;
+
+    align-items: center;
+    justify-content: center;
+    margin-left: 1%;
+    max-width: 90%;
+}
+
+main > div {
+    max-width: 5%;
+    margin: 1rem;
+
+}
+
+main > h1 {
+    width: max-content;
+    font-size: 2.25rem;
+    flex-basis: 90%;    
+}
+
+main > p {
+    font-size: 1.125rem;
+    overflow: visible;
+    flex-direction: row;
+}
+
+
+
+/* ------------------------ */
+
+
+
+aside {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+   
+
+    overflow: hidden;
+    float: left;
+
+
+    border: 2.5px solid;
+    height: min-content;
+    max-width: min-content;
+    height: 200%;
+
+    visibility: hidden;
+}
+
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    justify-content: center;
+    align-items: flex-end;
+
+    margin-top: 5px;
+    width: 100%;
+    border-top: 2.5px solid;
+    font-size: 16px 1rem;
+}
+
+
+@media (max-width: 750px) { 
+    header {
+        flex-direction: column;
+    }
+
+    aside {
+        visibility: hidden;
+    }
+
+    .card {
+        max-width: 80%;
+    }
 
 }
