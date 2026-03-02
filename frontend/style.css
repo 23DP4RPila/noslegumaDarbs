@@ -1,20 +1,3 @@
-.card {
-    display: inline-flex;
-
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
-    justify-content: space-evenly;
-    
-    
-    border: 0.1rem solid;
-    border-radius: 1rem;
-    padding: 1rem;
-    min-width: 6rem;
-    min-height: 6rem;   
-}
-
-
 
 * { 
     overflow-x: hidden;
@@ -23,6 +6,8 @@
 body {
     background-color: rgb(173, 208, 209);
 }
+
+/* ------------------------------------------------------------------------------------------ */
 
 .card {
     display: inline-flex;
@@ -62,21 +47,24 @@ body {
 }
 
 
-/* ------------------------ */
+/* ------------------------------------------------------------------------------------------ */
 
 
 header {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
 
 
     padding: 1rem;
-    min-width: 95%;
-    border-bottom: 0.2rem solid;
-    align-content: center ;
+    flex-direction: row;
+    align-content: center;
     align-items: center;
     
+}
+
+header > * {
+    margin: 1rem;
 }
 
 header > img {
@@ -124,7 +112,7 @@ header > a:active {
 
 
 
-/* ------------------------ */
+/* ------------------------------------------------------------------------------------------ */
 
 
 
@@ -133,23 +121,18 @@ main {
 
     flex-wrap: wrap;
     flex-basis: 100%;
+    flex-direction: column;
 
     align-items: center;
+    align-items: center;
     justify-content: center;
-    margin-left: 1%;
+
     max-width: 90%;
 }
 
-main > div {
-    max-width: 5%;
-    margin: 1rem;
-
-}
-
 main > h1 {
-    width: max-content;
     font-size: 2.25rem;
-    flex-basis: 90%;    
+  
 }
 
 main > p {
@@ -160,38 +143,22 @@ main > p {
 
 
 
-/* ------------------------ */
+/* ------------------------------------------------------------------------------------------ */
 
-
-
-aside {
-    display: flex;
-    align-items: flex-end;
-    flex-direction: column;
-   
-
-    overflow: hidden;
-    float: left;
-
-
-    border: 2.5px solid;
-    height: min-content;
-    max-width: min-content;
-    height: 200%;
-
-    visibility: hidden;
+hr {
+    max-width: 70%;
+    
 }
 
-
 footer {
-    display: flex;
+    display: inline-flex;
     justify-content: flex-end;
-    justify-content: center;
-    align-items: flex-end;
+    align-items: center;
+    flex-direction: column;
+    
 
     margin-top: 5px;
     width: 100%;
-    border-top: 2.5px solid;
     font-size: 16px 1rem;
 }
 
