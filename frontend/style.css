@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: rgb(173, 208, 209);
+    background-color: rgb(201, 201, 201);
 }
 
 /* ------------------------------------------------------------------------------------------ */
@@ -95,7 +95,7 @@ header > a {
     text-decoration: none;  
     color: black;  
     border: none;
-    background-color: rgb(141, 171, 172);
+    background-color: rgb(133, 133, 133);
     font-size: 4rem
 }
 
@@ -124,10 +124,10 @@ main {
     flex-direction: column;
 
     align-items: center;
-    align-items: center;
     justify-content: center;
 
-    max-width: 90%;
+    padding-left: 30%;
+    padding-right: 30%;
 }
 
 main > h1 {
@@ -139,6 +139,7 @@ main > p {
     font-size: 1.125rem;
     overflow: visible;
     flex-direction: row;
+    text-align: center;
 }
 
 
@@ -147,7 +148,8 @@ main > p {
 
 hr {
     max-width: 70%;
-    
+    background-color: black;
+    height: 1px;
 }
 
 footer {
