@@ -1,113 +1,100 @@
-# FocusFlow Backend - Node.js
+# FocusFlow Backend
 
-## Setup Instructions
+Node.js Express backend for task management application with work mode focus feature.
 
-### 1. Install Dependencies
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 14+
+- MySQL 5.7+
+- npm or yarn
+
+### Installation
+
+1. **Install dependencies:**
 ```bash
-cd backend
 npm install
 ```
 
-### 2. Setup Database
-- Create MySQL database
-- Run `database/schema.sql` in your MySQL client:
+2. **Setup database:**
 ```bash
 mysql -u root -p < database/schema.sql
 ```
 
-### 3. Environment Variables
-Copy `.env.example` to `.env` and configure:
+3. **Configure environment:**
 ```bash
 cp .env.example .env
 ```
 
-Edit `.env`:
+Edit `.env` with your database credentials:
 ```
 DB_HOST=localhost
 DB_USER=root
-DB_PASSWORD=yourpassword
+DB_PASSWORD=your_password
 DB_NAME=focusflow
-PORT=5000
 JWT_SECRET=your_super_secret_key
 ```
 
-### 4. Run Server
-**Development:**
+4. **Start development server:**
 ```bash
 npm run dev
 ```
 
-**Production:**
-```bash
-npm start
-```
+Server will run on `http://localhost:5000`
 
-Server runs on `http://localhost:5000`
-
-## API Endpoints
+## 📚 API Endpoints
 
 ### Authentication
-- `POST /api/auth/register` - Register new user
+- `POST /api/auth/register` - Create new account
 - `POST /api/auth/login` - Login user
 
 ### Tasks
 - `GET /api/tasks` - Get all user tasks
 - `GET /api/tasks/:id` - Get single task
-- `POST /api/tasks` - Create task
+- `POST /api/tasks` - Create new task
 - `PUT /api/tasks/:id` - Update task
 - `DELETE /api/tasks/:id` - Delete task
-- `GET /api/tasks/search/filter` - Filter tasks by status, priority, project
+
+Query params: `?status=todo&priority=high&search=query&projectId=1`
 
 ### Projects
 - `GET /api/projects` - Get all projects
-- `GET /api/projects/:id` - Get project with tasks
 - `POST /api/projects` - Create project
 - `PUT /api/projects/:id` - Update project
 - `DELETE /api/projects/:id` - Delete project
 
 ### Admin
-- `GET /api/admin/users` - Get all users
-- `GET /api/admin/tasks` - Get all tasks
-- `GET /api/admin/stats` - System statistics
-- `GET /api/admin/history` - Task history log
-- `DELETE /api/admin/users/:id` - Delete user
+- `GET /api/admin/users` - List all users (admin only)
+- `GET /api/admin/stats` - System statistics (admin only)
+- `DELETE /api/admin/users/:userId` - Delete user
 
-## Example Requests
+## 🔐 Authentication
 
-### Register
-```bash
-curl -X POST http://localhost:5000/api/auth/register \
-  -H "Content-Type: application/json" \
-  -d '{"username":"john","email":"john@example.com","password":"password123"}'
+All protected endpoints require Bearer token:
+```
+Authorization: Bearer <your_jwt_token>
 ```
 
-### Create Task
+## 📊 Database Schema
+
+- **users** - User accounts with roles
+- **projects** - User projects (grouping)
+- **tasks** - Individual tasks with status
+- **work_sessions** - Track focus periods
+- **task_history** - Audit log
+- **user_statistics** - User stats and streaks
+
+## 🛡️ Security
+
+- Password hashing with bcryptjs
+- JWT token authentication
+- Input validation with express-validator
+- CORS protection
+- Helmet.js security headers
+
+## 📝 Development
+
 ```bash
-curl -X POST http://localhost:5000/api/tasks \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer YOUR_TOKEN" \
-  -d '{"title":"My Task","priority":"high","project_id":1}'
+npm run dev      # Start with nodemon
+npm start        # Start production
 ```
-
-### Filter Tasks
-```bash
-curl "http://localhost:5000/api/tasks/search/filter?status=todo&priority=high" \
-  -H "Authorization: Bearer YOUR_TOKEN"
-```
-
-## Database Schema
-
-- **users** - User accounts with roles (user/admin)
-- **projects** - Project groupings for tasks
-- **tasks** - Individual tasks with status tracking
-- **work_sessions** - Track focus time on tasks
-- **task_history** - Audit log of all task changes
-
-## Security Features
-
-- ✅ Password hashing with bcryptjs
-- ✅ JWT token authentication
-- ✅ Input validation with express-validator
-- ✅ CORS protection
-- ✅ Helmet security headers
-- ✅ Admin role-based access control
